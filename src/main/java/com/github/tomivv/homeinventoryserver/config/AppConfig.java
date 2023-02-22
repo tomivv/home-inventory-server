@@ -12,8 +12,10 @@ import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 
+import com.github.tomivv.homeinventoryserver.item.ItemRepository;
+
 @Configuration
-@EnableDynamoDBRepositories
+@EnableDynamoDBRepositories(basePackageClasses = ItemRepository.class)
 public class AppConfig {
     
     @Bean
