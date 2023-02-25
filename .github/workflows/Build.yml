@@ -27,7 +27,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: create env file
-      run: echo "${{ secrects.ENV_FILE }}" > src/main/resources/env.properties
+      run: echo "${{ secrets.ENV_FILE }}" > src/main/resources/env.properties
     - name: Run tests
       run: mvn -B test
   build:
