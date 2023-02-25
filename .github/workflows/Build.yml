@@ -44,5 +44,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: create env file
+      run: echo "${{ secrets.ENV_FILE }}" > src/main/resources/env.properties
     - name: Build with Maven
       run: mvn -B package --file pom.xml
